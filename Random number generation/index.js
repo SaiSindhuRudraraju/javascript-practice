@@ -21,6 +21,7 @@ const subResult = document.getElementById("subResult");
 const mysubmpaymentResultit = document.getElementById("paymentResult");
 
 mysubmit.onclick = function(){
+    /*
     if(mycheckbox.checked)
     {
         subResult.textContent = `You are subscribed`;
@@ -28,6 +29,10 @@ mysubmit.onclick = function(){
     else{
         subResult.textContent = `You are not subscribed`;
     }
+    */
+
+    //terenary operator
+    mycheckbox.checked ? subResult.textContent = `You are subscribed` : subResult.textContent = `You are not subscribed`;
 
     if(visaBtn.checked)
     {
