@@ -34,6 +34,8 @@ mysubmit.onclick = function(){
     //terenary operator
     mycheckbox.checked ? subResult.textContent = `You are subscribed` : subResult.textContent = `You are not subscribed`;
 
+    /*
+
     if(visaBtn.checked)
     {
         mysubmpaymentResultit.textContent = `You are paying with visa`;
@@ -48,5 +50,34 @@ mysubmit.onclick = function(){
     }
     else{
         mysubmpaymentResultit.textContent = `You must select a payment type`;
+    }
+    */
+
+    //switch case
+
+    let paymentType;
+
+    if (visaBtn.checked) {
+        paymentType = "visa";
+    } else if (mastercardBtn.checked) {
+        paymentType = "mastercard";
+    } else if (paypalBtn.checked) {
+        paymentType = "paypal";
+    } else {
+        paymentType = "none";
+    }
+
+    switch (paymentType) {
+        case "visa":
+            mysubmpaymentResultit.textContent = "You are paying with visa";
+            break;
+        case "mastercard":
+            mysubmpaymentResultit.textContent = "You are paying with master card";
+            break;
+        case "paypal":
+            mysubmpaymentResultit.textContent = "You are paying with paypal";
+            break;
+        default:
+            mysubmpaymentResultit.textContent = "You must select a payment type";
     }
 }
