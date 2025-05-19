@@ -45,3 +45,16 @@ else
 {
     document.getElementById("p3").textContent = `Not Enrolled: ${student}`;
 }
+
+let fruits = "apple";
+console.log(typeof(fruits));
+
+fruits = ["apple"];
+console.log(typeof(fruits));
+
+fruits = ["apple", "banana", "orange"];
+console.log(typeof(fruits));
+console.log(fruits);
+console.log(fruits[0]);
+console.log(fruits[1]);
+console.log(fruits[2]);
