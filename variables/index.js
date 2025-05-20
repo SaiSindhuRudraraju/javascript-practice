@@ -58,3 +58,20 @@ console.log(fruits);
 console.log(fruits[0]);
 console.log(fruits[1]);
 console.log(fruits[2]);
+
+/*
+Spread operator = ...
+                    allows an iterable such as an array or string to be expanded
+                    into separate elements
+                    (unpacks the elements)
+*/
+
+let numbers = [1,2,3,4,5];
+
+console.log(numbers);
+
+let maximum = Math.max(numbers);
+console.log(maximum);
+
+maximum = Math.max(...numbers);
+console.log(maximum);
