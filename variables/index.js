@@ -65,13 +65,35 @@ Spread operator = ...
                     into separate elements
                     (unpacks the elements)
 */
-
+console.log("*****Spread Operator************");
 let numbers = [1,2,3,4,5];
 
 console.log(numbers);
+
+console.log(...numbers);
+
 
 let maximum = Math.max(numbers);
 console.log(maximum);
 
 maximum = Math.max(...numbers);
 console.log(maximum);
+
+maximum = Math.min(...numbers);
+console.log(maximum);
+
+let username = "Sindhu Rudraraju";
+let letters = [...username].join("-");
+
+console.log(letters);
+
+fruits = ["apple", "banana", "orange"];
+let newFruits = [...fruits];
+
+console.log(fruits);
+console.log(newFruits);
+
+let vegetables = ["carrots", "celery", "potatoes"];
+let foods = [...fruits, ...vegetables, "eggs", "milk"];
+
+console.log(foods);
