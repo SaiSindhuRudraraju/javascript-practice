@@ -1,0 +1,77 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: black;
+}
+
+.calculator {
+  background: black;
+  padding: 20px;
+  border-radius: 40px;
+  width: 320px;
+}
+
+#display {
+  width: 100%;
+  height: 80px;
+  background: black;
+  color: white;
+  border: none;
+  font-size: 48px;
+  text-align: right;
+  padding: 10px 20px;
+  margin-bottom: 20px;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+}
+
+.btn {
+  height: 70px;
+  font-size: 24px;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.gray {
+  background: #a5a5a5;
+  color: black;
+}
+
+.dark {
+  background: #333333;
+  color: white;
+}
+
+.orange {
+  background: #f1a33c;
+  color: white;
+}
+
+.orange:hover {
+  background: #f39c12;
+}
+
+.gray:hover {
+  background: #bbb;
+}
+
+.dark:hover {
+  background: #4d4d4d;
+}
+
+.zero {
+  grid-column: span 2;
+  border-radius: 40px;
+  text-align: left;
+  padding-left: 26px;
+}
