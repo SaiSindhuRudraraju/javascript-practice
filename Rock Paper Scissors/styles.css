@@ -1,0 +1,118 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  color: white;
+  font-family: 'Segoe UI', sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+}
+h1 {
+  font-size: 3rem;
+  margin-bottom: 2rem;
+  text-shadow: 2px 2px 5px #000;
+}
+
+#game {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+#choices {
+  display: flex;
+  gap: 2rem;
+}
+
+.btn {
+  font-size: 4rem;
+  padding: 20px;
+  border: none;
+  border-radius: 20px;
+  background: linear-gradient(145deg, #1e2a38, #293f53);
+  color: white;
+  box-shadow: 0 8px 15px rgba(0,0,0,0.5), inset 0 2px 4px rgba(255,255,255,0.1);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  transform: perspective(500px) translateZ(0);
+}
+.btn:hover {
+  transform: perspective(500px) translateZ(20px);
+  box-shadow: 0 15px 25px rgba(0,0,0,0.7), 0 0 15px #00ffe0;
+}
+.btn:active {
+  transform: scale(0.95) perspective(500px) translateZ(10px);
+}
+
+#result p {
+  font-size: 1.5rem;
+}
+#winner {
+  font-size: 2rem;
+  animation: pop 0.5s ease;
+}
+
+#score {
+  font-size: 1.3rem;
+  margin-top: 1rem;
+}
+
+.actions {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.control {
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 10px;
+  background-color: #0dcaf0;
+  color: #000;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.control:hover {
+  background-color: #31d2f2;
+}
+.end {
+  background-color: #dc3545;
+  color: white;
+}
+.end:hover {
+  background-color: #bb2d3b;
+}
+
+#finalResult {
+  margin-top: 2rem;
+  font-size: 1.8rem;
+  background: #ffffff10;
+  border-radius: 10px;
+  padding: 1rem 2rem;
+  backdrop-filter: blur(5px);
+  animation: fadein 0.6s ease;
+}
+
+.hidden {
+  display: none;
+}
+
+@keyframes pop {
+  0% { transform: scale(0.5); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes fadein {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
