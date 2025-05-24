@@ -1,0 +1,83 @@
+/* General reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f8f9fa;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Slider container */
+.slider {
+  position: relative;
+  width: 90%;
+  max-width: 600px;
+  height: 400px;
+  margin: auto;
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  background-color: #fff;
+}
+
+/* Slides image style */
+.slider img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: none;
+  transition: opacity 0.5s ease-in-out;
+}
+
+/* Display active slide */
+img.displaySlide {
+  display: block;
+  opacity: 1;
+}
+
+/* Navigation buttons */
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0,0,0,0.6);
+  color: #fff;
+  border: none;
+  font-size: 2rem;
+  padding: 10px 16px;
+  cursor: pointer;
+  border-radius: 50%;
+  z-index: 10;
+  transition: background-color 0.3s ease;
+}
+
+.prev:hover, .next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .slider {
+    height: 300px;
+  }
+
+  .prev, .next {
+    font-size: 1.5rem;
+    padding: 8px 12px;
+  }
+}
