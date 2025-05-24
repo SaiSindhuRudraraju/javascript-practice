@@ -10,6 +10,7 @@ Callback Hell (also called the Pyramid of Doom) happens when multiple asynchrono
     Use Promises + async/await to avoid Callback Hell
  */
 
+    /*
 console.log("Start making a sandwich...");
 
 setTimeout(() => {
@@ -35,3 +36,36 @@ setTimeout(() => {
   }, 1000);
 
 }, 1000);
+
+*/
+
+const sandwich = document.getElementById("sandwich");
+
+function addIngredient(ingredient, callback) {
+  setTimeout(() => {
+    const li = document.createElement("li");
+    li.textContent = ingredient;
+    sandwich.appendChild(li);
+    callback();
+  }, 1000);
+}
+
+function startMakingSandwich() {
+  sandwich.innerHTML = ""; // Clear previous sandwich
+
+  addIngredient("🍞 Bread", () => {
+    addIngredient("🥬 Lettuce", () => {
+      addIngredient("🍅 Tomato", () => {
+        addIngredient("🧀 Cheese", () => {
+          addIngredient("🍗 Chicken", () => {
+            addIngredient("🍞 Top Bread", () => {
+              addIngredient("✅ Done!", () => {
+                console.log("Sandwich is ready! This is Callback Hell.");
+              });
+            });
+          });
+        });
+      });
+    });
+  });
+}
