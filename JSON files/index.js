@@ -1,99 +1,48 @@
-//variable = A container that stores a value.
-//          Behaved as if it were the value it contains.
+/**
+ *  JSON = (JavaScript Object Notation) data-interchange format
+ *          Used for exchanging data between a server and a web application
+ *          JSON files {key: value} OR [value1, value2, value3]
+ * 
+ *          JSON.stringify() = converts a JS object to a JSON string.
+ *          JSON.parse() = converts a JSON string to a JS object. 
+ */
 
-//1. declaration    let x;
-//2. assignment     x = 100;
+const jsonnames = `["Sindhu", "Rudraraju", "Squidgame", "superman"]`;
 
-/*
-let x;
-let y = 123;
+const jsonperson = `{"id": 1, "firstName": "John", "lastName": "Doe", "email": "john.doe@example.com", "hobbies": ["Fishing", "cooking", "dancing"] }`;
 
-x=100;
-console.log(x);
-console.log(y);
+const jsonpeople = `[{"id": 1,"firstName": "John","lastName": "Doe","email": "john.doe@example.com"},
+  {"id": 2,"firstName": "Jane","lastName": "Smith","email": "jane.smith@example.com"},
+  {"id": 3,"firstName": "Alice","lastName": "Johnson","email": "alice.johnson@example.com"},
+  {"id": 4,"firstName": "Bob","lastName": "Brown","email": "bob.brown@example.com"},
+  {"id": 5,"firstName": "Sindhu","lastName": "Rudraraju","email": "sindhu.r@example.com"}]`;
 
-let age = 25;
-let price = 10.99;
-let gpa = 2.1;
+const parsedData = JSON.parse(jsonnames);
+console.log(jsonnames);
+console.log(parsedData);
 
-console.log(age);
-console.log(price);
-console.log(`Your GPA is ${gpa}`);
-
-console.log(typeof(age));
-console.log(typeof(price));
-console.log(typeof(gpa));
-console.log(typeof("Sindhu"));
-
-let online = true;
-online = false;
-console.log(typeof(online));
-
-*/
-
-let fullname = "Sindhu R";
-let age = 25;
-let student = false;
-
-document.getElementById("p1").textContent = `Your name is ${fullname}`;
-document.getElementById("p2").innerHTML = `You are ${age} years old`;
-if(student)
-{
-    document.getElementById("p3").textContent = `Enrolled: ${student}`;
-}
-else
-{
-    document.getElementById("p3").textContent = `Not Enrolled: ${student}`;
-}
-
-let fruits = "apple";
-console.log(typeof(fruits));
-
-fruits = ["apple"];
-console.log(typeof(fruits));
-
-fruits = ["apple", "banana", "orange"];
-console.log(typeof(fruits));
-console.log(fruits);
-console.log(fruits[0]);
-console.log(fruits[1]);
-console.log(fruits[2]);
+const parsedData1 = JSON.parse(jsonpeople);
+console.log(jsonpeople);
+console.log(parsedData1);
 
 /*
-Spread operator = ...
-                    allows an iterable such as an array or string to be expanded
-                    into separate elements
-                    (unpacks the elements)
+const jsonString = JSON.stringify(names);
+
+console.log(names);
+console.log(jsonString);
+
+const personString = JSON.stringify(person);
+console.log(person);
+console.log(personString);
+
+const peopleString = JSON.stringify(people);
+console.log(people);
+console.log(peopleString);
 */
-console.log("*****Spread Operator************");
-let numbers = [1,2,3,4,5];
 
-console.log(numbers);
+//************FETCH**************** */
 
-console.log(...numbers);
-
-
-let maximum = Math.max(numbers);
-console.log(maximum);
-
-maximum = Math.max(...numbers);
-console.log(maximum);
-
-maximum = Math.min(...numbers);
-console.log(maximum);
-
-let username = "Sindhu Rudraraju";
-let letters = [...username].join("-");
-
-console.log(letters);
-
-fruits = ["apple", "banana", "orange"];
-let newFruits = [...fruits];
-
-console.log(fruits);
-console.log(newFruits);
-
-let vegetables = ["carrots", "celery", "potatoes"];
-let foods = [...fruits, ...vegetables, "eggs", "milk"];
-
-console.log(foods);
+fetch("people.json")
+    .then(response => response.json())
+    .then(values => values.forEach(value => console.log(value)))
+    .catch(error => console.error(error))
